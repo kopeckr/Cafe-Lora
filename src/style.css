@@ -244,6 +244,16 @@ nav a:hover {
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
+  /* filter: grayscale(80%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+  background-color: #e67e51a2;
+  padding: 30px 40px;
 }
 
 .contacts {
