@@ -293,6 +293,10 @@ nav a:hover {
     margin-bottom: 0rem;
   }
 
+  .nav-btn {
+    background-image: none;
+  }
+
   .nav-closed {
     display: block;
   }
