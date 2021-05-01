@@ -1,6 +1,5 @@
 import './style.css';
-
-console.log('funguju!');
+import { Drink } from './Drink/index';
 
 const navElm = document.querySelector('nav');
 const navBtn = document.querySelector('#nav-btn');
@@ -16,28 +15,30 @@ navAllElm.forEach((elm) => {
   elm.addEventListener('click', showNav);
 });
 
-let ordered = 'false';
-const btnElm = document.querySelector('.order-btn');
+// let ordered = 'false';
+// const btnElm = document.querySelector('.order-btn');
 
-const changeText = () => {
-  if (ordered === 'false') {
-    btnElm.textContent = 'Zrušit';
-    document.querySelector('.drink__cup').classList.add('drink__cup--selected');
-    ordered = 'true';
-  } else {
-    document
-      .querySelector('.drink__cup')
-      .classList.remove('drink__cup--selected');
-    btnElm.innerHTML = 'Objednat';
-    ordered = 'false';
-  }
-};
+// const changeText = () => {
+//   if (ordered === 'false') {
+//     btnElm.textContent = 'Zrušit';
+//     document.querySelector('.drink__cup').classList.add('drink__cup--selected');
+//     ordered = 'true';
+//   } else {
+//     document
+//       .querySelector('.drink__cup')
+//       .classList.remove('drink__cup--selected');
+//     btnElm.innerHTML = 'Objednat';
+//     ordered = 'false';
+//   }
+// };
 
-btnElm.addEventListener('click', changeText);
+// btnElm.addEventListener('click', changeText);
+
+//=============================================
 
 import { Layer } from './Layer/index';
 
-const drinkSection = document.querySelector('.drink__info');
+// const drinkSection = document.querySelector('.drink__info');
 
 const layers = [
   {
@@ -54,6 +55,24 @@ const layers = [
   },
 ];
 
-for (let i = 0; i < layers.length; i++) {
-  drinkSection.innerHTML += Layer(layers[i]);
-}
+// for (let i = 0; i < layers.length; i++) {
+//   drinkSection.innerHTML += Layer(layers[i]);
+// }
+
+document.querySelector('.drinks-list').appendChild(
+  Drink({
+    id: 'romano',
+    name: 'Romano',
+    ordered: false,
+    layers: [
+      {
+        color: '#fbdf5b',
+        label: 'citrón',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
+  }),
+);
